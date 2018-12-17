@@ -1,3 +1,15 @@
+
+
+
+.titlefont{
+	font-weight: 600;
+}
+
+.set-cardfont{
+font-weight: 500;
+font-family: Nunito;
+}
+
 /*css for add button*/
 .btn-add{
   position: absolute;
@@ -15,10 +27,25 @@
   margin-top: 12px;
 }
 
+.btn-del{
+	position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-weight: normal;
+  margin-top: 12px;
+}
+
 /*media query for small devices */
 @media (min-width: 768px) and (max-width: 800px) {
   /*css for add button*/
   .btn-add {
+  	width:40%;
+   font-size: 14px;
+   padding:3px;
+  }
+
+ /*css for delete button*/
+  .btn-del {
   	width:20%;
    font-size: 14px;
    padding:3px;

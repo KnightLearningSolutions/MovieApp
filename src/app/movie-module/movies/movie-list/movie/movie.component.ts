@@ -37,7 +37,6 @@ export class MovieComponent implements OnInit {
 	addToFavourite(movie) {
 		this.jsonApiService.addToFavourite(movie).subscribe((res) =>{
 			this.successMessage=MessageConfig.SUCCESS_ADD_MESSAGE;
-			console.log("fgfg" + this.successMessage);
 			this.getFavourite();
 			Swal({
 				position: 'center',

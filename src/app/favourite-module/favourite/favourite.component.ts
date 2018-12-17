@@ -5,14 +5,14 @@ import Swal from 'sweetalert2';
 
 
 @Component({
-  selector: 'app-favourite',
-  templateUrl: './favourite.component.html',
-  styleUrls: ['./favourite.component.css'],
-  providers: [JsonApiService]
+	selector: 'app-favourite',
+	templateUrl: './favourite.component.html',
+	styleUrls: ['./favourite.component.css'],
+	providers: [JsonApiService]
 })
 
 export class FavouriteComponent implements OnInit {
-public favMovies : any =[];
+	public favMovies : any =[];
 	public errorMessage ='';
 	public flag = 'list';
 
@@ -20,7 +20,7 @@ public favMovies : any =[];
 	}
 
 	ngOnInit() {
-    this.getFavourite();
+		this.getFavourite();
 	}
 
 	//get data of favourite movies from database
@@ -40,8 +40,8 @@ public favMovies : any =[];
 	
 // update movie data from movies 
 setFavMovieList(event){
- this.favMovies=event.favMovies;
- this.getFavourite();
+	this.favMovies=event.favMovies;
+	this.getFavourite();
 }
 
 }

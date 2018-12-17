@@ -8,7 +8,7 @@
 
 /*css for navbar logo*/
  .navbar-brand{
-  color:green;
+  color:rgb(64, 191, 102) !important;
   font-size: 2rem;
   font-family: 'Timmana', sans-serif;
 }
