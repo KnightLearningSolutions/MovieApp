@@ -1,0 +1,77 @@
+<!-- For displaying error on the browser -->
+<h6 *ngIf="displayError" class="text-danger" align="right">{{errorMsg}}</h6>
+
+<!-- movie list  -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-sm-6" *ngFor="let movie of movies"> 
+      <div class="card">
+       <app-movie [movie]="movie" (favArray)="setFavMovieList($event)" (update)="setMovie($event)" [flag]="flag"></app-movie>
+     </div>
+   </div>
+ </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-hide" data-backdrop="static" data-keyboard="false" data-toggle="modal" #open  data-target="#openMovieModal">
+		openModal
+	</button>
+
+<!-- Modal -->
+<div class="modal fade" id="openMovieModal" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Update Movie</h5>
+				<button type="button" class="close" #close data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form [formGroup]="movieForm">
+					<input class="form-control mb-3" type="text" formControlName="title">
+					<div *ngIf="movieForm.get('title').touched && movieForm.get('title').errors">
+										<div class="error" *ngIf="movieForm.get('title').errors.required">
+											Movie Title is required.
+										</div>
+										<div class="error" *ngIf="movieForm.get('title').errors.minlength">
+											Movie Title should be of atleast 2 characters.
+										</div>
+										<div class="error" *ngIf="movieForm.get('title').errors.maxlength">
+											Movie Title should be of max 25 characters.
+										</div>
+									</div>
+					<input class="form-control mb-3" type="text" formControlName="overview">
+					<div *ngIf="movieForm.get('overview').touched && movieForm.get('overview').errors">
+										<div class="error" *ngIf="movieForm.get('overview').errors.required">
+											Overview is required.
+										</div>
+										<div class="error" *ngIf="movieForm.get('overview').errors.minlength">
+											Overview should be of atleast 5 characters.
+										</div>
+										<div class="error" *ngIf="movieForm.get('overview').errors.maxlength">
+											Overview should be of max 1000 characters.
+										</div>
+									</div>
+					<input class="form-control mb-3" type="text" formControlName="vote_average">
+					<div *ngIf="movieForm.get('vote_average').touched && movieForm.get('vote_average').errors">
+										<div class="error" *ngIf="movieForm.get('vote_average').errors.required">
+											Rating is required.
+										</div>
+										<div class="error" *ngIf="movieForm.get('vote_average').errors.pattern">
+											Valid Rating is required.
+										</div>
+										<div class="error" *ngIf="movieForm.get('vote_average').errors.maxlength">
+											Rating should be of max 3 digits.
+										</div>
+									</div>
+				</form>			
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary common-btnstyle" data-dismiss="modal">Close</button>
+				<button type="submit" [disabled]="movieForm.invalid"  class="btn btn-primary common-btnstyle" (click)="updateMovie(currentMovie)">Submit</button>
+			</div>
+		</div>
+	</div>
+</div>
+

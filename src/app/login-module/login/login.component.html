@@ -1,0 +1,60 @@
+<app-header></app-header>
+<div class="container mb-5">
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="text-center text-white mb-4"></h2>
+			<div class="row">
+				<div class="col-md-6 mx-auto">
+					<span class="anchor" id="formLogin"></span>
+					<!-- form card login -->
+					<div class="card round-border borderStyle">
+						<div class="card-header">
+							<h3 class="mb-0">Login</h3>
+						</div>
+						<div class="card-body">
+							<div class="text-center error">{{errorMsg}}</div>
+							<form class="form" role="form" id="formLogin">
+								<div class="form-group">
+									<label>Email</label>
+									<input type="email" [(ngModel)]="loginDetails.emailId" class="form-control form-control-lg round-border" name="email" id="loginemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required  #emailId='ngModel'>
+									<div *ngIf="emailId.invalid" class="text-danger">
+										<div *ngIf="emailId.errors?.required && emailId.touched">
+											EmailId is required
+										</div>
+										<div *ngIf="emailId.errors?.pattern && emailId.touched">
+											Enter valid EmailId
+										</div>
+<!-- 										<div *ngIf="emailId.untouched && password.touched">
+											EmailId is required
+										</div> -->
+									</div>
+								</div>
+								<div class="form-group">
+									<label>Password</label>
+									<input type="password" [(ngModel)]="loginDetails.password" class="form-control form-control-lg round-border" id="loginpassword" name="password" minlength="6" maxlength="12" required #password='ngModel'>
+									<div *ngIf="password.invalid" class="text-danger" >
+            <div *ngIf="password.errors?.required && password.touched">
+              Password is required.
+            </div>
+            <div *ngIf="password.errors?.minlength && password.touched">
+              Password should be of atleast 6 digits.
+            </div>
+          </div>
+								</div>
+								<button [disabled]="emailId.invalid || password.invalid" type="submit" class="btn btn-success btn-lg round-border" (click)="login(loginDetails)">Login</button>
+								<hr class="pt-2">
+								<!-- <span>Don't have an account!&nbsp;<a routerLink="/register">SignUp Here</a></span> -->
+							</form>
+						</div>
+						<!--/card-block-->
+					</div>
+					<!-- /form card login -->
+				</div>
+			</div>
+			<!--/row-->
+		</div>
+		<!--/col-->
+	</div>
+	<!--/row-->
+</div>
+<app-footer></app-footer>

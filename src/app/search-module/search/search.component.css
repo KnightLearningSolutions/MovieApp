@@ -1,0 +1,19 @@
+/*to add styling to input*/
+input{
+	border-color: lightgray;
+}
+
+/* to remove chrome default styling on input box*/
+input:-webkit-autofill {
+ -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/*to add styling to search bar*/
+.inputstyle{
+border-radius: 40px !important;
+}
+
+/* to add styling for search icon*/
+.set-icon{
+	background-color: cornflowerblue;
+}

@@ -1,0 +1,22 @@
+ /* to set css for movie counter*/
+  .set-movieCount{
+	border-radius: 40px !important;
+	border-color: lightgray;
+	background-color: blue !important;
+	color:white;
+	float: right;
+	margin-top:-80px;
+	margin-right: 18px;
+	font-size: 20px;
+}
+
+@media (max-width: 576px){
+.set-movieCount{
+margin-top:-10px;	
+float: left;
+margin-left: 18px;
+}
+.set-cardcontent{
+	margin:40px;
+}
+}

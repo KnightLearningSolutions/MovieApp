@@ -1,0 +1,23 @@
+
+<!-- movie information to be dislayed in movie-list -->
+<div class="row">
+	<div class="col-md-4 col-sm-6 px-0">
+	 <img class="img-fluid d-block mx-auto px-0" [attr.src]="movieUrl+movie.poster_path" alt="Image not found"> 
+ </div>
+ <div class="col-md-8 col-sm-6 px-0">
+	<div class="card-body pt-0">
+		<h5 class="card-title text-center ">{{movie?.title}}</h5>
+		<p class="card-text set-cardfont"><strong>Overview:</strong>&nbsp;{{(movie.overview?.length>70)? (movie?.overview | slice:0:110)+'..':(movie.overview)}}</p>
+		<p class="card-text set-cardfont"><strong>Rating:</strong> {{movie?.vote_average}}</p>
+	</div>
+</div>
+<div *ngIf="flag === 'search'">
+	<button class="btn btn-primary btn-add common-btnstyle" (click)="addToFavourite(movie)" >Add to favourite</button>
+</div>
+<div *ngIf="flag === 'list'">
+	<button class="btn btn-primary btn-add common-btnstyle" (click)="deleteMovie(movie.id)" >Delete</button>
+	<button type="button" class="btn btn-primary btn-update common-btnstyle" (click)="setMovie(movie)">
+		Update
+	</button>
+</div>
+

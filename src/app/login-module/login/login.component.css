@@ -1,0 +1,9 @@
+/*css style for rounded border*/
+.round-border{
+	 border-radius: 10px;
+}
+
+/*css for border color of form*/
+.borderStyle{
+border-color:green;
+}

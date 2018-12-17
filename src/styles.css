@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*global css for button*/
+.common-btnstyle{
+ border-radius: 40px;
+}
+
+/*global css for error message*/
+.error{
+	color:red;
+	margin-top:-9px;
+	font-size: 13px;
+}
+
+.sweet-alert { 
+       width:  450px;   
+}

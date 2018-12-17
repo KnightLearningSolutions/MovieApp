@@ -1,0 +1,38 @@
+/*css for add button*/
+.btn-add{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-weight: normal;
+  margin-top: 12px;
+}
+
+/*css for update button*/
+.btn-update{
+  position: absolute;
+  bottom: 0px;
+  right: 90px;
+  margin-top: 12px;
+}
+
+/*media query for small devices */
+@media (min-width: 768px) and (max-width: 800px) {
+  /*css for add button*/
+  .btn-add {
+  	width:20%;
+   font-size: 14px;
+   padding:3px;
+  }
+
+  /*css for update button*/
+.btn-update{
+  width:20%;
+  font-size:14px;
+  padding:3px;
+}
+
+/* css for movie card content*/
+.set-cardfont{
+font-size: 14px;
+}
+}

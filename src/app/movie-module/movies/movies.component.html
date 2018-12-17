@@ -1,0 +1,23 @@
+
+<app-header></app-header>
+<app-search (success)="setMovieList($event)"></app-search>
+
+<div class="set-movieCount p-2"><i class="fa fa-star-o bg-success" aria-hidden="true"></i> Movies: {{favMovies.length}}</div>
+<div class="row set-cardcontent"></div>
+
+<app-movie-list  [movies]="movies" (favArray)="setFavMovieList($event)" [flag]="flag"></app-movie-list>
+
+<!-- for welcome message on home page  -->
+<div class="jumbotron mt-2 mx-2" *ngIf="showHome">
+  <h3 class="display-4">Welcome Home!</h3>
+  <p class="lead">Search your movie by entering movie in the search bar.</p>
+  <hr class="my-4">
+  <p>A great place to search your favourite movies.</p>
+</div>
+
+<!-- Display message when no result found for entered movie  -->
+ <div class="jumbotron mt-2 mx-2" *ngIf="searchResult">
+  <h3 class="display-4">No Result Found</h3>
+  <p class="lead">404 Not Found.</p>
+</div>
+<app-footer></app-footer>
