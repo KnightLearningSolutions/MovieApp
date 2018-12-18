@@ -27,7 +27,6 @@ export class FavouriteComponent implements OnInit {
 	getFavourite() {
 		this.jsonApiService.getFavourite().subscribe((res: any) =>{
 			this.favMovies = res;
-
 		},(error:any)=>{
 			this.errorMessage=MessageConfig.INTERNAL_ERROR_OCCURED;
 			Swal({

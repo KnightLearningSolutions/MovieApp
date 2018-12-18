@@ -2,7 +2,7 @@
 
 /*global css for button*/
 .common-btnstyle{
- border-radius: 40px;
+	border-radius: 40px;
 }
 
 /*global css for error message*/
@@ -13,5 +13,16 @@
 }
 
 .sweet-alert { 
-       width:  450px;   
+	width:  450px;   
+}
+
+/* global css for jumbotron*/
+.display-heading{
+	font-family: Nunito, sans-serif;
+}
+
+.display-content{
+	font-family: Fira Sans;
+	font-weight: 400;
+	font-size:18px;
 }

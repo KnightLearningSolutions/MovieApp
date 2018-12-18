@@ -1,3 +1,10 @@
 <app-header></app-header>
+<!-- To display message when no movie is added in favouritelist -->
+<div class="jumbotron my-auto mx-4 text-center" *ngIf="favMovies<1">
+  <h3 class="display-4 display-heading">No Movie Found <i class="fa fa-search"></i></h3>
+  <p class="display-content">Add your favourite movie by entering movie in the search bar.</p>
+  <hr class="my-4">
+  <p class="lead">A Great place to keep your favourite movies.</p>
+</div>
 <app-movie-list [movies]="favMovies" (favArray) ="setFavMovieList($event)" [flag]="flag"></app-movie-list>
 <app-footer></app-footer>

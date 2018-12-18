@@ -1,5 +1,5 @@
 <!-- For movie Search bar -->
-<div class="col-md-6 col-sm-6 my-3 mx-auto">
+<div class="col-md-4 col-sm-6 mx-auto mt-4">
   <form>
   <div class="input-group">
     <input type="text" class="form-control inputstyle"  [(ngModel)]="movieSearch" required pattern="[a-zA-Z0-9]+" (keydown.enter)="$event.preventDefault()" placeholder="    Search movie..." name="movieTitle">
@@ -7,6 +7,7 @@
       <button [disabled]="movieSearch?.length<2" class="btn btn-secondary set-icon inputstyle" type="submit" (click)="searchMovie()"> <i class="fa fa-search"></i></button>
     </span>
   </div>
+ 
 </form>
   <span class="error pl-4">{{msg}}</span>
 </div>

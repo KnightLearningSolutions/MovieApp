@@ -37,7 +37,9 @@ margin-left: 18px;
 
 
 .gallery {
-    padding: 40px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* Override bootstrap column paddings */
@@ -60,8 +62,8 @@ margin-left: 18px;
     opacity: 0;
     color: #fff;
     font-size: 26px;
-    font-family: 'Glyphicons Halflings';
-    content: '';
+    font-family: FontAwesome;
+    content: '\F00E';
     pointer-events: none;
     z-index: 9000;
     transition: 0.4s;
