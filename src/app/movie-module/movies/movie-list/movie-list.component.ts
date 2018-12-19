@@ -69,7 +69,6 @@ setMovie(event){
  // update movie in database
  updateMovie(movie){
  this.jsonApiService.updateMovie(movie.id,this.movieForm.value).subscribe(res=>{
- 	this.favMovies=this.currentMovie;
  	this.successMessage=MessageConfig.SUCCESS_UPDATE_MESSAGE;
  	 Swal({
   position: 'center',
@@ -88,4 +87,5 @@ setMovie(event){
 			})
   })
 }
+
 }

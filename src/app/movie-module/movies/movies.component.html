@@ -8,7 +8,7 @@
 <app-movie-list  [movies]="movies" (favArray)="setFavMovieList($event)" [flag]="flag"></app-movie-list>
 
 <!-- for welcome message on home page  -->
-<div class="jumbotron mx-4 text-center" >
+<div class="jumbotron mx-4 text-center" *ngIf="showHome">
   <h3 class="display-4 display-heading">Welcome Home <i class="fa fa-home"></i></h3>
   <p class="display-content">Search your movie by entering movie in the search bar.</p>
   <hr class="my-4 lead">
